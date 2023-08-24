@@ -23,3 +23,30 @@ variable "Private_subnet_1_cidr" {
   type        = string
   default     = "10.0.3.0/24"
 }
+
+
+
+variable "Availibilty_zone_1" {
+  description = "public subnet availibity zone 1"
+  type        = string
+  default     = "eu-west-2a"
+}
+
+
+variable "Availibilty_zone_2" {
+  description = "public subnet availibity zone 2"
+  type        = string
+  default     = "eu-west-2b"
+}
+
+variable "Availibilty_zone_3" {
+  description = "private subnet availibity zone 1"
+  type        = string
+  default     = "eu-west-2c"
+}
+
+variable "Availibilty_zone_4" {
+  description = "private subnet availibity zone 2"
+  type        = string
+  default     = "eu-west-2a"
+}
