@@ -1,8 +1,9 @@
 # Project7-VPC
 
 resource "aws_vpc" "VPC-PROJECT-7" {
-  cidr_block       = "10.0.0.0/16"
+  cidr_block       = var.vpc_cidr
   instance_tenancy = "default"
+
 
   tags = {
     Name = "VPC-PROJECT-7"
@@ -13,7 +14,7 @@ resource "aws_vpc" "VPC-PROJECT-7" {
 
 resource "aws_subnet" "Prod-pub-sub-1" {
   vpc_id     = aws_vpc.VPC-PROJECT-7.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = var.Public_subnet_1_cidr
 
   tags = {
     Name = "Prod-pub-sub-1"
@@ -32,7 +33,7 @@ resource "aws_subnet" "Prod-pub-sub-2" {
 # Private -subnets
 resource "aws_subnet" "Prod-priv-sub-1" {
   vpc_id     = aws_vpc.VPC-PROJECT-7.id
-  cidr_block = "10.0.3.0/24"
+  cidr_block = var.Private_subnet_1_cidr
 
   tags = {
     Name = "Prod-priv-sub-1"
@@ -126,3 +127,5 @@ resource "aws_route" "Prod-Nat-association" {
   gateway_id                  = aws_nat_gateway.Prod-Nat-gateway.id
   destination_cidr_block    = "0.0.0.0/0"
 }
+
+
