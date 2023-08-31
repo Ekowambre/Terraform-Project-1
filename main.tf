@@ -129,3 +129,13 @@ resource "aws_route" "Prod-Nat-association" {
 }
 
 
+
+
+resource "aws_instance" "T_ec2" {
+  ami           = "ami-028eb925545f314d6"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "T-ec2"
+  }
+}

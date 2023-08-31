@@ -50,3 +50,5 @@ variable "Availibilty_zone_4" {
   type        = string
   default     = "eu-west-2a"
 }
+
+
